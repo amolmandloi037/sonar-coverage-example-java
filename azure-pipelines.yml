@@ -28,11 +28,25 @@ steps:
       # sonar.exclusions=**/*.bin
       sonar.projectKey=helloworld_helloworld
 
-    
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    codeCoverageToolOption: 'JaCoCo'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.11'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: true
+    isJacocoCoverageReportXML: true
+    sqMavenPluginVersionChoice: 'latest'
+    goals: 'package'
 
 - task: CmdLine@2
   inputs:
-    script: 'mvn help:effective-settings'
+    script: 'mvn deploy'
 
 
 - task: CopyFiles@2
