@@ -1,5 +1,6 @@
 # Maven
 
+
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -36,7 +37,9 @@ steps:
     sqMavenPluginVersionChoice: 'latest'
     goals: 'package'
       
-
+- task: MavenAuthenticate@0
+  inputs:
+    artifactsFeeds: 'artifacts'
 - task: SonarQubePublish@4
   inputs:
     pollingTimeoutSec: '300'
