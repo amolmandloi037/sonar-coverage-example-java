@@ -41,18 +41,7 @@
         <!-- allowed values: R7, 1.0, 1.5, 2.0 or none -->
         <wtp.version>none</wtp.version>
     </properties>
-   <repositories>
-      <repository>
-  <id>artifacts</id>
-  <url>https://pkgs.dev.azure.com/amolmandloi7/helloworld/_packaging/artifacts/maven/v1</url>
-  <releases>
-    <enabled>true</enabled>
-  </releases>
-  <snapshots>
-    <enabled>true</enabled>
-  </snapshots>
-</repository>
-   </repositories>
+
    
     <scm>
         <connection>scm:git:git@github.com:pingunaut/wicket-pwnedpasswords-validator.git</connection>
@@ -306,5 +295,15 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+             <repository>
+  <id>artifacts</id>
+  <url>https://pkgs.dev.azure.com/amolmandloi7/helloworld/_packaging/artifacts/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
     </repositories>
 </project>
