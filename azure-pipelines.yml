@@ -34,7 +34,7 @@ steps:
   inputs:
     script: |
       ls
-      printenv
+      mvn help:effective-settings
 
 - task: CopyFiles@2
   inputs:
