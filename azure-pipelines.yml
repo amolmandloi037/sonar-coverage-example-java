@@ -34,7 +34,7 @@ steps:
   inputs:
     script: |
       ls
-      echo $MVN_HOME
+      printenv
 
 - task: CopyFiles@2
   inputs:
