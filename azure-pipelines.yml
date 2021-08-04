@@ -16,7 +16,7 @@ steps:
   inputs:
     SourceFolder: '$(system.defaultworkingdirectory)'
     Contents: '**/settings.xml'
-    TargetFolder: '${user.home}/.m2'
+    TargetFolder: '/usr/share/apache-maven-3.8.1/.m2'
     OverWrite: true
 - task: SonarQubePrepare@4
   inputs:
@@ -56,6 +56,3 @@ steps:
 - task: MavenAuthenticate@0
   inputs:
     artifactsFeeds: 'artifacts'
-- task: SonarQubePublish@4
-  inputs:
-    pollingTimeoutSec: '300'
