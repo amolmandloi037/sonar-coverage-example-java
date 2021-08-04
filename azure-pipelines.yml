@@ -34,7 +34,9 @@ steps:
   inputs:
     script: |
       ls
-      mvn help:effective-settings
+      pwd
+      echo $(system.defaultworkingdirectory)
+   #   mvn help:effective-settings
 
 
 - task: CopyFiles@2
