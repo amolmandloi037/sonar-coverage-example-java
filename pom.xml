@@ -266,11 +266,7 @@
                 <id>ossrh</id>
                 <url>https://oss.sonatype.org/content/repositories/snapshots</url>
             </snapshotRepository>
-            <repository>
-                <id>ossrh</id>
-                <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-            </repository>
-               <repository>
+           <repository>
   <id>artifacts</id>
   <url>https://pkgs.dev.azure.com/amolmandloi7/helloworld/_packaging/artifacts/maven/v1</url>
   <releases>
