@@ -261,12 +261,10 @@
                     </plugin>
                 </plugins>
             </build>
-            <distributionManagement>
-            <snapshotRepository>
-                <id>ossrh</id>
-                <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            </snapshotRepository>
-           <repository>
+        </profile>
+    </profiles>
+<distributionManagement>   
+<repository>
   <id>artifacts</id>
   <url>https://pkgs.dev.azure.com/amolmandloi7/helloworld/_packaging/artifacts/maven/v1</url>
   <releases>
@@ -276,10 +274,7 @@
     <enabled>true</enabled>
   </snapshots>
 </repository>
-            </distributionManagement>
-        </profile>
-    </profiles>
-
+  <distributionManagement>
     <repositories>
      <repository>
   <id>artifacts</id>
