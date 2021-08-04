@@ -36,6 +36,7 @@ steps:
       ls
       mvn help:effective-settings
 
+
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(system.defaultworkingdirectory)'
