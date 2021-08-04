@@ -12,6 +12,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '**/settings.xml'
+    TargetFolder: '${user.home}/.m2'
+    OverWrite: true
 - task: SonarQubePrepare@4
   inputs:
     SonarQube: 'sonar-test'
@@ -37,6 +43,16 @@ steps:
     sqMavenPluginVersionChoice: 'latest'
     goals: 'package'
       
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '**/*.jar'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 - task: MavenAuthenticate@0
   inputs:
     artifactsFeeds: 'artifacts'
