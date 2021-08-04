@@ -41,7 +41,7 @@ steps:
     sonarQubeRunAnalysis: true
     isJacocoCoverageReportXML: true
     sqMavenPluginVersionChoice: 'latest'
-    goals: 'package'
+    goals: 'deploy'
       
 - task: CopyFiles@2
   inputs:
