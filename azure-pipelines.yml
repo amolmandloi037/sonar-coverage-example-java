@@ -34,8 +34,8 @@ steps:
   inputs:
     script: |
       ls
-      cat settings.xml
-      mvn deploy
+      echo $MVN_HOME
+
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(system.defaultworkingdirectory)'
